@@ -1,13 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
-//import PeticionGET from "./vistas/PeticionGet";
-import Estuante from "./vistas/Estudiantes";
+import Cursos from "./vistas/PeticionPost";
+import Estudiante from "./vistas/Estudiantes";
+import Layout from "./vistas/Layout";
 
 function App() {
-  return <Estuante />;
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        {}
+        <Route path="BuscarEstudiante" element={<Estudiante />} />
+        <Route path="IngresarCurso" element={<Cursos />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
